@@ -7,6 +7,7 @@ def wifiConnect(wifiname,wifipassword):
     ifaces = wifi.interfaces()[0]
     ifaces.disconnect()# 断开连接
     time.sleep(0.5)
+    
     if ifaces.status() == const.IFACE_DISCONNECTED:
         profile = pywifi.Profile()# 创建WiFi连接文件
         profile.ssid = wifiname# WiFi的ssid，即wifi的名称
