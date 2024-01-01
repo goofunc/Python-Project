@@ -7,7 +7,6 @@ def wifiConnect(wifiname,wifipassword):
     ifaces = wifi.interfaces()[0]
     ifaces.disconnect()# 断开连接
     time.sleep(0.5)
-    
     if ifaces.status() == const.IFACE_DISCONNECTED:
         profile = pywifi.Profile()# 创建WiFi连接文件
         profile.ssid = wifiname# WiFi的ssid，即wifi的名称
@@ -25,7 +24,7 @@ def wifiConnect(wifiname,wifipassword):
             return False
 def main():
     print('开始破解：')
-    file = open('G:\myweb\pythondemo\pwd.txt','r')#打开密码本
+    file = open('G:\myweb\pythondemo\pwd.txt','r')#打开密码本 要爆破字典
     # wifi_name=input('请输入所要破解的wifi的名字（请务必注意大小写）：')
     wifi_name = "12345"
     while True:
